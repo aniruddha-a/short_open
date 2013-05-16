@@ -12,8 +12,7 @@ can be a real time saver.
 The same can be achieved with sed/awk or any other regex-well-supported
 languages, but Perl is my choice.
 
-Aliases
-=======
+## Aliases
 
 Here are a few `bash` aliases that I use (which specify the editor I want to use,
 and the file extension):
@@ -40,4 +39,22 @@ can run:
 
 With a small change in the regex, it can be made to 
 work on _CamelCase_ file names as well.
+
+
+Short Change
+============
+
+Similar to the short-open, a quick `cd` (change dir) script (`short_change.pl`) and alias
+
+`bash` function:
+
+        c() {
+            CDIR=$(~/short_change.pl "$@")  # assuming script is in the home dir
+            if [[ ! $CDIR =~ 'Invalid:' ]] ; then 
+                cd $CDIR
+                pwd
+            else
+                echo $CDIR
+            fi
+        }
 
