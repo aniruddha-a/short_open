@@ -3,6 +3,7 @@ Short Open
 
 Most of the source files that I work on, follow this `long_underscore_separated_names` convention, 
 and I hate to press _TAB TAB TAB_ ...
+
 When I know a file name, or am seeing it on console (with a previous `ls`), 
 I want to be able to open a file (in the current directory) with as few keystrokes as possible.
 
