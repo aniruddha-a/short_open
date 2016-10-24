@@ -51,7 +51,9 @@ if ( scalar(@ARGV) > 1 ) {
     exit 1;
 }
 $res = $in;   
-$res .= '.*[.]';  #  match any part of the file name 
+if ($res !~ /[.]$/ ) { # If user ended with a '.' lets use it
+    $res .= '.*[.]';   #  match any part of the file name
+}
 $res .= $ext;     
 $re = qr/$res/;
 foreach $a ( glob("*.$ext") ) {
